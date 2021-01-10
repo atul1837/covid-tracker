@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+SIR MODEL
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assests/img/icons8-coronavirus-50.png" />
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 14px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<script
+      type="text/javascript"
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"
+    ></script>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="SIRModel.html">SIR MODEL</a>
+  <a href="SEIRModel.html">SEIR MODEL</a>
+  <a href="#clients">MSIR MODEL</a>
+  <a href="index.html">Index</a>
+</div>
+
+<div class="main">
+  <h2>SIR MODEL</h2>
+  <h2><u>Description</u></h2>
+      <p>Most simple compartmental models and many other models come from this one</p>
+      <p>The model has 3 compartments:</p>
+      <p>1)S for number of susceptible,I for infectious and 
+           and R for number of recorvered or deceased(can be called resistant or removed)
+      </p>
+      <p>2)Reasonably predictive for infectous diseases where recovered becomes resistant</p>
+      <p>3)variables represent  no of people in each compartment ar a particular time</p>
+      <p>4)these 3 variables vary with time..</p>
+      <p>5)each member of population progressess from susceptible to infected to recovered</p>
+  <br>
+  <h2><u>Equations without Vital Dynamics</u><h2>
+  <p>
+     $$
+       {\displaystyle {\begin{aligned}&{\frac {dS}{dt}}=-{\frac {\beta IS}{N}},\\
+       {\frac {dI}{dt}}={\frac {\beta IS}{N}}-\gamma I,\\
+       {\frac {dR}{dt}}=\gamma I,\end{aligned}}}
+     $$
+  </p>
+  <img src="assests/img/1.png" alt="SIRModel" style="width:800px;height:500px;">
+</div>
+   
+</body>
+</html> 

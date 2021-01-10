@@ -1,0 +1,151 @@
+.body {
+  height: 1450px;
+  margin: auto;
+  width: 100%;
+}
+
+.layer1-head {
+  /* border: 2px dotted red; */
+  text-align: center;
+}
+
+.layer1 {
+  height: 40%;
+  margin: auto;
+  border: 2px solid grey;
+}
+
+.layer1-body {
+  height: 100%;
+}
+.layer2 {
+  height: 60%;
+  margin: auto;
+  border: 2px solid grey;
+}
+.layer2-body {
+  height: 100%;
+}
+
+.layer2-head {
+  /* border: 2px dotted red; */
+  text-align: center;
+}
+
+.layer1-left {
+  /* padding: 0; */
+  /* border: 2px solid grey; */
+}
+
+.layer1-right {
+  /* padding: 0; */
+  /* border: 2px solid grey; */
+  height: 100%;
+}
+
+.layer1-text {
+  /* border: 2px solid grey; */
+  height: 50%;
+  width: 100%;
+}
+
+.layer1-sliders {
+  /* border: 2px solid grey; */
+  height: 50%;
+  width: 100%;
+}
+
+.layer2-left {
+  /* padding: 0; */
+  /* border: 2px solid grey; */
+}
+
+.layer2-right {
+  /* padding: 0; */
+  /* border: 2px solid grey; */
+  height: 100%;
+}
+
+.layer2-text {
+  /* border: 2px solid grey; */
+  height: 65%;
+  width: 100%;
+}
+
+.layer2-sliders {
+  /* border: 2px solid grey; */
+  height: 35%;
+  width: 100%;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  text-align: center;
+  padding: 0%;
+  /* height: 85%; */
+  width: 85%;
+  margin: auto;
+  margin-top: 5%;
+}
+.cont {
+  height: 33.33%;
+  width: 100%;
+}
+
+.layer2-sliders .cont {
+  height: 25%;
+}
+
+.chart-container {
+  padding: 20px;
+  position: relative;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+
+#chart1 {
+  height: 100%;
+}
+
+#chart2 {
+  height: 100%;
+}
+
+.layer2-right .chart-container {
+  padding-top: 25%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4caf50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4caf50;
+  cursor: pointer;
+}

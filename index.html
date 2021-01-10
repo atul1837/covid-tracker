@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Epidemic Simulator</title>
+    <meta
+      name="description"
+      content="An Interactive Epidemic Simulator for Various Models"
+    />
+    <link rel="icon" href="assests/img/icons8-coronavirus-50.png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script
+      type="text/javascript"
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"
+    ></script>
+  </head>
+  <body>
+    <!-- Image and text -->
+    <div class="home">
+      <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" target="_blank">
+          <img src="assests/img/icons8-coronavirus-50.png" />
+        </a>
+        <a class="navbar-brand" href="#">
+          Epidemic Simulator
+        </a>
+        <a href="./tracker.html" class="navbar-brand"> Covid Live Tracker</a>
+      </nav>
+      <div class="body">
+        <div class="layer1">
+          <div class="layer1-head">
+            <h1>SIR Model</h1>
+          </div>
+          <div class="row layer1-body">
+            <div class="col-sm-4 layer1-left">
+              <div class="layer1-text">
+                <!-- <h6><u>SIR MODEL<u><h6> -->
+                <h2>
+                  <u><center>SIR Model</center></u>
+                </h2>
+                <p>
+                  SIR model is an epidemiological model that computes the
+                  theoretical number of people infected with a contagious
+                  illness in a closed population over time.
+                </p>
+                <p>
+                  $$ {\displaystyle {\begin{aligned}&{\frac {dS}{dt}}=-{\frac
+                  {\beta IS}{N}},\\ [6pt]&{\frac {dI}{dt}}={\frac {\beta
+                  IS}{N}}-\gamma I,\\ [6pt]&{\frac {dR}{dt}}=\gamma
+                  I,\end{aligned}}} $$
+                </p>
+                <strong>Link: <a href="SIRModel.html">SIR model</a></strong>
+              </div>
+              <div class="layer1-sliders">
+                <div class="container">
+                  <div class="cont">
+                    <div class="slidecontainer">
+                      <input
+                        type="range"
+                        min="1"
+                        max="100"
+                        value="50"
+                        class="slider"
+                        id="beta"
+                      />
+                    </div>
+                    <h6>
+                      Infection Rate:-
+                      <span id="layer1-infectionrate"></span>
+                    </h6>
+                  </div>
+                  <div class="cont">
+                    <div class="slidecontainer">
+                      <input
+                        type="range"
+                        min="1"
+                        max="100"
+                        value="50"
+                        class="slider"
+                        id="gamma"
+                      />
+                    </div>
+                    <h6>
+                      Recovery Rate:- <span id="layer1-recoveryrate"></span>
+                    </h6>
+                  </div>
+                  <div class="cont">
+                    <div class="slidecontainer">
+                      <input
+                        type="range"
+                        min="1"
+                        max="100"
+                        value="50"
+                        class="slider"
+                        id="totalPop"
+                      />
+                    </div>
+                    <h6>Population:- <span id="layer1-population"></span></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-8 layer1-right">
+              <div class="chart-container">
+                <canvas id="chart1"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="layer2">
+          <div class="layer2-head">
+            <h1>SEIR Model</h1>
+          </div>
+          <div class="layer2-body row">
+            <div class="col-sm-4 layer2-left">
+              <div class="layer2-text">
+                <!-- <h6><u>SIR MODEL<u><h6> -->
+                <h2>
+                  <u><center>SEIR Model</center></u>
+                </h2>
+                <p>
+                  The SEIR model assumes people carry lifelong immunity to a
+                  disease upon recovery, but for many diseases the immunity
+                  after infection wanes over time. In this case, the SEIRS model
+                  is used to allow recovered individuals to return to a
+                  susceptible state. Specifically, \xi is the rate which
+                  recovered individuals return to the susceptible statue due to
+                  loss of immunity. If there is sufficient influx to the
+                  susceptible population, at equilibrium the dynamics will be in
+                  an endemic state with damped oscillation.
+                </p>
+                <p>
+                  $$ {\displaystyle {\begin{aligned}{\frac {dS}{dt}}&amp; =\mu
+                  N-\mu S-\beta {\frac {I}{N}}S\\[8pt]{\frac {dE}{dt}}&amp;
+                  =\beta {\frac {I}{N}}S-(\mu +a)E\\[8pt]{\frac {dI}{dt}}&amp;
+                  =aE-(\gamma +\mu )I\\[8pt]{\frac {dR}{dt}}&amp;=\gamma I-\mu
+                  R.\end{aligned}}} $$
+                </p>
+                <strong>Link: <a href="SEIRModel.html">SEIR model</a></strong>
+              </div>
+              <div class="layer2-sliders">
+                <div class="container">
+                  <div class="cont">
+                    <div class="slidecontainer">
+                      <input
+                        type="range"
+                        min="1"
+                        max="100"
+                        value="50"
+                        class="slider"
+                        id="layer2beta"
+                      />
+                    </div>
+                    <h6>Exposure Rate:- <span id="layer2-exposure"></span></h6>
+                  </div>
+                  <div class="cont">
+                    <div class="slidecontainer">
+                      <input
+                        type="range"
+                        min="1"
+                        max="100"
+                        value="50"
+                        class="slider"
+                        id="layer2gamma"
+                      />
+                    </div>
+                    <h6>Recovery Rate:- <span id="layer2-recovery"></span></h6>
+                  </div>
+                  <div class="cont">
+                    <div class="slidecontainer">
+                      <input
+                        type="range"
+                        min="1"
+                        max="100"
+                        value="20"
+                        class="slider"
+                        id="layer2mue"
+                      />
+                    </div>
+                    <h6>Death Rate:- <span id="layer2-death"></span></h6>
+                  </div>
+                  <div class="cont">
+                    <div class="slidecontainer">
+                      <input
+                        type="range"
+                        min="1"
+                        max="100"
+                        value="50"
+                        class="slider"
+                        id="layer2alpha"
+                      />
+                    </div>
+                    <h6>
+                      Infection Rate:- <span id="layer2-infection"></span>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-8 layer2-right">
+              <div class="chart-container">
+                <canvas id="chart2"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
